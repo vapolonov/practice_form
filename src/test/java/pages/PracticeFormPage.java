@@ -1,36 +1,16 @@
 package pages;
 
-import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static locators.PracticeFormLocators.*;
 
 public class PracticeFormPage {
 
-    public static SelenideElement
-            firstNameInput = $("#firstName"),
-            lastNameInput = $("#lastName"),
-            emailInput = $("#userEmail"),
-            userNumberInput = $("#userNumber"),
-            genderWrapper = $("#genterWrapper"),
-            calendarInput = $("#dateOfBirthInput"),
-            subjectInput = $("#subjectsInput"),
-            hobbiesWrapper = $("#hobbiesWrapper"),
-            chooseFileButton = $("#uploadPicture"),
-            addressInput = $("#currentAddress"),
-            stateDropdown = $("#state"),
-            cityDropdown = $("#city"),
-            stateCityWrapper = $("#stateCity-wrapper"),
-            submitButton = $("#submit"),
-            modalWindow = $(".modal-content"),
-            modalTitle = $("#example-modal-sizes-title-lg");
-
-
     CalendarComponent calendarComponent = new CalendarComponent();
-
 
     public void openPage() {
         open("/automation-practice-form");
