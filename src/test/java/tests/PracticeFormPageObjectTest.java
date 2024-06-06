@@ -3,6 +3,8 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.PracticeFormPage;
 
+import static tests.TestData.*;
+
 public class PracticeFormPageObjectTest extends TestBase {
 
     PracticeFormPage practiceFormPage = new PracticeFormPage();
@@ -11,9 +13,9 @@ public class PracticeFormPageObjectTest extends TestBase {
     void fillPracticeFormTest() {
         practiceFormPage.openPage();
 
-        practiceFormPage.setFirstName("Vasily");
-        practiceFormPage.setLastName("Apolonov");
-        practiceFormPage.setEmail("vasvap@gmail.com");
+        practiceFormPage.setFirstName(firstName);
+        practiceFormPage.setLastName(lastName);
+        practiceFormPage.setEmail(userEmail);
 
         practiceFormPage.setGender("Male");
 
@@ -36,9 +38,8 @@ public class PracticeFormPageObjectTest extends TestBase {
 
         practiceFormPage.checkModalIsAppear("Thanks for submitting the form");
 
-        practiceFormPage.checkResult("Student Name", "Vasily Apolonov")
-                .checkResult("Student Name", "Vasily Apolonov")
-                .checkResult("Student Email", "vasvap@gmail.com")
+        practiceFormPage.checkResult("Student Name", firstName + ' ' + lastName)
+                .checkResult("Student Email", userEmail)
                 .checkResult("Gender", "Male")
                 .checkResult("Mobile", "1234567890")
                 .checkResult("Date of Birth", "09 September,1974")
