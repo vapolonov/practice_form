@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 
+import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -15,7 +16,18 @@ public class PracticeFormPage {
             emailInput = $("#userEmail"),
             userNumberInput = $("#userNumber"),
             genderWrapper = $("#genterWrapper"),
-            calendarInput = $("#dateOfBirthInput");
+            calendarInput = $("#dateOfBirthInput"),
+            subjectInput = $("#subjectsInput"),
+            hobbiesWrapper = $("#hobbiesWrapper"),
+            chooseFileButton = $("#uploadPicture"),
+            addressInput = $("#currentAddress"),
+            stateDropdown = $("#state"),
+            cityDropdown = $("#city"),
+            stateCityWrapper = $("#stateCity-wrapper"),
+            submitButton = $("#submit"),
+            modalWindow = $(".modal-content"),
+            modalTitle = $("#example-modal-sizes-title-lg");
+
 
     CalendarComponent calendarComponent = new CalendarComponent();
 
@@ -57,4 +69,38 @@ public class PracticeFormPage {
         return this;
     }
 
+    public void setSubject(String value) {
+        subjectInput.setValue(value).pressEnter();
+    }
+
+    public void setHobbies(String value) {
+        hobbiesWrapper.$(byText(value)).click();
+    }
+
+    public void uploadPicture(String value) {
+        chooseFileButton.uploadFromClasspath(value);
+    }
+
+    public void setAddress(String value) {
+        addressInput.setValue(value);
+    }
+
+    public void selectState(String value) {
+        stateDropdown.click();
+        stateCityWrapper.$(byText(value)).click();
+    }
+
+    public void selectCity(String value) {
+        cityDropdown.click();
+        stateCityWrapper.$(byText(value)).click();
+    }
+
+    public void sendForm() {
+        submitButton.click();
+    }
+
+    public void checkModalIsAppear(String value) {
+        modalWindow.should(appear);
+        modalTitle.shouldHave(text(value));
+    }
 }

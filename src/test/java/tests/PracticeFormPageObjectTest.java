@@ -3,11 +3,6 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.PracticeFormPage;
 
-import static com.codeborne.selenide.Condition.appear;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
-
 public class PracticeFormPageObjectTest extends TestBase {
 
     PracticeFormPage practiceFormPage = new PracticeFormPage();
@@ -26,25 +21,20 @@ public class PracticeFormPageObjectTest extends TestBase {
 
         practiceFormPage.setDateOfBirth("09", "September", "1974");
 
+        practiceFormPage.setSubject("Math");
 
-        $("#subjectsInput").setValue("Math").pressEnter();
+        practiceFormPage.setHobbies("Sports");
 
-        $("#hobbiesWrapper").$(byText("Sports")).click();
+        practiceFormPage.uploadPicture("img\\pic.jpg");
 
-//        $("#uploadPicture").uploadFile(new File("src\\test\\resources\\img\\pic.jpg"));
-        $("#uploadPicture").uploadFromClasspath("img\\pic.jpg");
+        practiceFormPage.setAddress("Some address 1");
 
-        $("#currentAddress").setValue("Some address 1");
+        practiceFormPage.selectState("Haryana");
+        practiceFormPage.selectCity("Panipat");
 
-        $("#state").click();
-        $("#stateCity-wrapper").$(byText("Haryana")).click();
-        $("#city").click();
-        $("#stateCity-wrapper").$(byText("Panipat")).click();
+        practiceFormPage.sendForm();
 
-        $("#submit").click();
-
-        $(".modal-content").should(appear);
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        practiceFormPage.checkModalIsAppear("Thanks for submitting the form");
 
         practiceFormPage.checkResult("Student Name", "Vasily Apolonov")
                 .checkResult("Student Name", "Vasily Apolonov")
