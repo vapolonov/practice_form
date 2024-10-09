@@ -39,7 +39,7 @@ public class PracticeFormWithFakerTest extends TestBase{
 
         practiceFormPage.setHobbies("Sports");
 
-        practiceFormPage.uploadPicture("img\\pic.jpg");
+        practiceFormPage.uploadPicture("img/pic.jpg");
 
         practiceFormPage.setAddress(streetAddress);
 

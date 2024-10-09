@@ -27,7 +27,7 @@ public class PracticeFormPageObjectTest extends TestBase {
 
         practiceFormPage.setHobbies("Sports");
 
-        practiceFormPage.uploadPicture("img\\pic.jpg");
+        practiceFormPage.uploadPicture("img/pic.jpg");
 
         practiceFormPage.setAddress("Some address 1");
 

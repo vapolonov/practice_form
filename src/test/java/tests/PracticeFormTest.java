@@ -45,7 +45,7 @@ public class PracticeFormTest {
         $("#hobbiesWrapper").$(byText("Sports")).click();
 
 //        $("#uploadPicture").uploadFile(new File("src\\test\\resources\\img\\pic.jpg"));
-        $("#uploadPicture").uploadFromClasspath("img\\pic.jpg");
+        $("#uploadPicture").uploadFromClasspath("img/pic.jpg");
 
         $("#currentAddress").scrollIntoView(true).setValue("Some address 100500");
 
