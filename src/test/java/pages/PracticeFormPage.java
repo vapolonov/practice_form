@@ -62,7 +62,7 @@ public class PracticeFormPage {
     }
 
     public void setAddress(String value) {
-        addressInput.setValue(value);
+        addressInput.scrollIntoView(true).setValue(value);
     }
 
     public void selectState(String value) {

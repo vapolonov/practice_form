@@ -47,7 +47,7 @@ public class PracticeFormTest {
 //        $("#uploadPicture").uploadFile(new File("src\\test\\resources\\img\\pic.jpg"));
         $("#uploadPicture").uploadFromClasspath("img\\pic.jpg");
 
-        $("#currentAddress").setValue("Some address 1");
+        $("#currentAddress").scrollIntoView(true).setValue("Some address 100500");
 
         $("#state").click();
         $("#stateCity-wrapper").$(byText("Haryana")).click();
