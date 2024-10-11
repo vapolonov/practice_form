@@ -2,12 +2,16 @@
   "base": {
     "logo": "./notifications/logo.png",
     "project": "${JOB_NAME}",
-    "environment": "${ENVIRONMENT} / Разрешение / Браузер",
+    "environment": "${ENVIRONMENT}",
     "comment": "${COMMENT}",
     "reportLink": "${BUILD_URL}",
     "language": "en",
     "allureFolder": "allure-report",
-    "enableChart": true
+    "enableChart": true,
+    "customData": {
+      "Разрешение": "1920х1080",
+      "Браузер": "Chrome"
+    }
   },
   "telegram": {
     "token": "1838101335:AAHr6X6xUSh3Woy1_kNTWQk4axW3qP53LFA",
