@@ -1,20 +1,17 @@
 {
   "base": {
     "logo": "",
-    "project": "",
-    "environment": "",
-    "comment": "@vasiliy_apolonov",
-    "reportLink": "ссылка",
-    "language": "ru",
-    "allureFolder": "C:\\Users\\vasvap\\AppData\\Local\\Temp\\2057707798676596113\\allure-report",
-    "enableChart": true,
-    "enableSuitesPublishing": false,
-    "customData": {}
+    "project": "${JOB_NAME}",
+    "environment": "${ENVIRONMENT}",
+    "comment": "${COMMENT}",
+    "reportLink": "${BUILD_URL}",
+    "language": "en",
+    "allureFolder": "allure-report",
+    "enableChart": true
   },
   "telegram": {
     "token": "1838101335:AAHr6X6xUSh3Woy1_kNTWQk4axW3qP53LFA",
     "chat": "-1001789507212",
-    "replyTo": "",
-    "templatePath": "/templates/telegram.ftl"
+    "replyTo": ""
   }
 }
