@@ -1,6 +1,6 @@
 {
   "base": {
-    "logo": "/notifications/logo.png",
+    "logo": "./notifications/logo.png",
     "project": "${JOB_NAME}",
     "environment": "${ENVIRONMENT}",
     "comment": "${COMMENT}",
