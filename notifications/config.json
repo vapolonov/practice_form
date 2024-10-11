@@ -3,6 +3,8 @@
     "logo": "./notifications/logo.png",
     "project": "${JOB_NAME}",
     "environment": "${ENVIRONMENT}",
+    "Разрешение": "1920x1080",
+    "Браузер": "Chrome",
     "comment": "${COMMENT}",
     "reportLink": "${BUILD_URL}",
     "language": "en",
